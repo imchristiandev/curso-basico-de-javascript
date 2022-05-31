@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "docs/2. ¿Por qué JavaScript?.md",
+            "file": "docs/1. ¿Qué es JavaScript?.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/2. ¿Por qué JavaScript?.md",
+                "file": "docs/1. ¿Qué es JavaScript?.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,8 +89,10 @@
   },
   "active": "cd591a1e5e8633d5",
   "lastOpenFiles": [
-    "docs/2. ¿Por qué JavaScript?.md",
     "docs/1. ¿Qué es JavaScript?.md",
+    "docs/2. ¿Por qué JavaScript?.md",
+    "docs/3. Elementos de un lenguaje de programación - Variables Funciones y Sintáxis.md",
+    "assets/tipos-de-datos.png",
     "README.md",
     "assets/lenguaje-interpretado.png",
     "assets/compilación.png"

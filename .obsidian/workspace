@@ -10,7 +10,7 @@
           "type": "markdown",
           "state": {
             "file": "README.md",
-            "mode": "source",
+            "mode": "preview",
             "source": false
           }
         }
@@ -90,6 +90,7 @@
   "active": "cd591a1e5e8633d5",
   "lastOpenFiles": [
     "README.md",
+    "1. ¿Qué es JavaScript?.md",
     "assets/lenguaje-interpretado.png",
     "assets/compilación.png"
   ]

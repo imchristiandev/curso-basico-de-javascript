@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "cd591a1e5e8633d5",
+        "id": "cb3949179f05cb84",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "docs/1. ¿Qué es JavaScript?.md",
+            "file": "docs/4. Variables en JavaScript.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/1. ¿Qué es JavaScript?.md",
+                "file": "docs/4. Variables en JavaScript.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -87,13 +87,14 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "cd591a1e5e8633d5",
+  "active": "cb3949179f05cb84",
   "lastOpenFiles": [
+    "docs/4. Variables en JavaScript.md",
+    "README.md",
+    "docs/3. Elementos de un lenguaje de programación - Variables Funciones y Sintáxis.md",
     "docs/1. ¿Qué es JavaScript?.md",
     "docs/2. ¿Por qué JavaScript?.md",
-    "docs/3. Elementos de un lenguaje de programación - Variables Funciones y Sintáxis.md",
     "assets/tipos-de-datos.png",
-    "README.md",
     "assets/lenguaje-interpretado.png",
     "assets/compilación.png"
   ]

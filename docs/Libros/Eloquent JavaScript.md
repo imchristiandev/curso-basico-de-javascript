@@ -135,4 +135,104 @@ Número 13 en bits
 ```
 
 ### Valores
-Una computadora típica moderna tiene más de 30 billones de bits en su almacenamiento de data volátil (memoria que está trabajando). 
+Una computadora típica moderna tiene más de 30 billones de bits en su almacenamiento de data volátil (memoria que está trabajando).  La memora no volátil (el disco duro) tiende a tener algunos órdenes de magnitud más.
+
+Para ser capaz ede trabajar con cantidades de bits sin perderte, deberemos separarlos en trozos que representan fragmentos de información, estos pedazos en JavaScript son llamados ***valores***.
+
+Para crear un valor, deberás invocar su nombre, si lo llamas, lo tienes. No es realmente creado del aire por supuesto. Cada valor está alojado en algún lugar.
+
+### Números
+Valores de tipo número son valores numéricos. En un programa JavaScript, serán escritos de la siguiente forma:
+
+```
+13
+```
+
+Usa esto en un programa, y esto causará que el patrón de bits del número 13 venga dentro de la existencia de la memoria de la computadora.
+
+JavaScript usa un número fijo de bits, 64 de ellos exactamente, para guardar un valor numérico simple. Para una representación limitada de diferentes tipos de números, exactamente se puede representar 2^64 números diferentes, que es un aproximado de 18 quintillones (un 18 con 18 ceros después de él).
+
+Las computadoras actuales pueden soportar pedazos de 64-bit sin preocuparse sobre el ovverflow solo cuando tratamos con verdaderos números astronómicos.
+
+Para números verdaderamente grandes o verdaderamente pequeños, podrías usar notiación científica añadiendo una e (para el exponente), seguida por el exponente del número
+
+```
+2.998e8
+2.998 * 10^8 = 299,800,000
+```
+
+
+### Aritmética
+La razón principal de hacer algo con números es la aritmética. Las operaciones aritméticas como la mutiplicación o la adición, toma dos números y produce un nuevo número de ellos
+
+```
+100 + 4 * 11 
+```
+
+Los símbolos `+` y `*` son llamados operadores
+
+```
+100 + 4 * 11 = 144
+(100 + 4) * 11 = 1144
+```
+
+El símbolo `%` representa el módulo o resto
+
+### Números especiales
+Hay tres valores especiales en JavaScript que son considerados números, pero no se comportan como números normales.
+
+- Infinity: Infinito positivo
+- - Infinity: Infinito negativo
+- NaN: NO es un número
+
+El valor de NaN es de tipo número, podrías obtener este resultado cuando tú por ejemplo, intentas calcular `0/0`  `Infinity - Infinity`, o cualquier operación numérica que no entregue un resultado con significado
+
+### Strings
+El siguiente tipo de data básico es el *string*. Son usados para representar texto y son escritos dentro de comillas.
+
+```
+`Down ond the sea`
+'Lie on the ocean'
+"Float on the ocean"
+```
+
+Si se desea trabajar con diferentes líneas se pueden usar backtticks
+
+```
+`This is the first line
+ And this is the second`
+```
+
+También es posible usar un backslash en un string para generar que el caracter tiene un significado especial como \n
+
+```
+"This is the first line\nAnd this is the second"
+
+-> This is the first line
+   And this is the second
+```
+
+Si deseamos usar un backslash o una comilla como un caracter normal deberemos anteponer un backslash delante del otro \\
+
+```
+"A newline character is written like \"\\n\"."
+```
+
+Los strings también son series de bits modelados que pueden existir dentro de una computadora. El modo en que JavaScritp lo hace está basado en el estándar Unicode
+
+Los strings no pueden ser divididos, multiplicados o restados, pero el operador `+` permite ser utilizado en ellos. No añadirá, pero si **concatenará**, o sea pegará dos strings juntas. En la siguiente línea produciremos el string "concatenate":
+
+```
+"con" + "cat" + "e" + "nate"
+```
+
+Los strings envueltos con backtick se le llaman ***Template Literals***, y pueden hacer algunos trucos, aparte de dar saltos de líneas, también pueden embeder otros valores
+
+```
+`la mitad de 100 es ${100 / 2}`
+
+-> La mitad de 100 es 50
+```
+
+### Operadores unarios
+

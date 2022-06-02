@@ -235,4 +235,16 @@ Los strings envueltos con backtick se le llaman ***Template Literals***, y puede
 ```
 
 ### Operadores unarios
+No todos los operadores son símbolos. Algunos son escritos como palabras. Un ejemplo es el operador `typeof` que produce un valor de string nombrando el tipo del valor que tu diste
 
+```
+console.log(typeof 4.5)
+// -> number
+
+console.log(typeof "x")
+// -> string
+```
+
+Los otros operadores muestran todas las operaciones con dos valores, pero `typeof` solo toma uno. Los operadores que usan dos valores, se llaman operadores *binarios*, mientras que los que llaman a un solo operador se llaman operadores *unarios*.
+
+### Valores Booleanos

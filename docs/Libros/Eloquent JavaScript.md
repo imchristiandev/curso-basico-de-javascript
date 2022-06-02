@@ -117,12 +117,6 @@ Es el texto que compone los programas. Leer código y escribir código son parte
 La [caja de arena](https://eloquentjavascript.net/code) en el sitio web proporciona enlaces a archivos Zip que contienen todos los scripts y archivos de datos necesarios para ejecutar el código de un capítulo determinado.
 
 ## Valores, Tipos, y Operadores
-
-> 
-> "Debajo de la superficie de la máquina, el programa se mueve. Sin esfuerzo, se expande y se contrae. En gran armonía, los electrones se dispersan y se reagrupan. Las figuras en el monitor son tan solo ondas sobre el agua. La esencia se mantiene invisible debajo de la superficie." 
-> - Master Yuan-Ma, The Book of Programming
-> 
-
 Dentro del mundo de los computadores, todo es data, puedes leer data, modificar data, crear nueva data, pero lo que no son datos no se puede mencionar.
 
 Los bits son un tipo de cosas de dos valores, usualmente descritos como ceros y unos. Dentro de la computadora, ellos toman formas de cargas eléctricas altas y bajas, una señal fuerte o débil o una superficie brillante u opaca en un CD. Cualquier parte de información discreta puede ser reducita en secuencias de ceros y unos y por lo tanto representada en bits.

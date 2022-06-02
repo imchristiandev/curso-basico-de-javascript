@@ -125,7 +125,7 @@ La [caja de arena](https://eloquentjavascript.net/code) en el sitio web propor
 
 Dentro del mundo de los computadores, todo es data, puedes leer data, modificar data, crear nueva data, pero lo que no son datos no se puede mencionar.
 
-Los vbits son un tipo de cosas de dos valores, usualmente descritos como ceros y unos. Dentro de la computadora, ellos toman formas de cargas eléctricas altas y bajas, una señal fuerte o débil o una superficie brillante u opaca en un CD. Cualquier parte de información discreta puede ser reducita en secuencias de ceros y unos y por lo tanto representada en bits.
+Los bits son un tipo de cosas de dos valores, usualmente descritos como ceros y unos. Dentro de la computadora, ellos toman formas de cargas eléctricas altas y bajas, una señal fuerte o débil o una superficie brillante u opaca en un CD. Cualquier parte de información discreta puede ser reducita en secuencias de ceros y unos y por lo tanto representada en bits.
 
 Número 13 en bits
 
@@ -220,7 +220,9 @@ Si deseamos usar un backslash o una comilla como un caracter normal deberemos an
 
 Los strings también son series de bits modelados que pueden existir dentro de una computadora. El modo en que JavaScritp lo hace está basado en el estándar Unicode
 
-Los strings no pueden ser divididos, multiplicados o restados, pero el operador `+` permite ser utilizado en ellos. No añadirá, pero si **concatenará**, o sea pegará dos strings juntas. En la siguiente línea produciremos el string "concatenate":
+Los strings no pueden ser divididos, multiplicados o restados, pero el operador `+` permite ser utilizado en ellos. No añadirá, pero si **concatenará**, o sea pegará dos strings juntas. 
+
+En la siguiente línea de código produciremos el string "concatenate":
 
 ```
 "con" + "cat" + "e" + "nate"
@@ -248,3 +250,134 @@ console.log(typeof "x")
 Los otros operadores muestran todas las operaciones con dos valores, pero `typeof` solo toma uno. Los operadores que usan dos valores, se llaman operadores *binarios*, mientras que los que llaman a un solo operador se llaman operadores *unarios*.
 
 ### Valores Booleanos
+Es frecuente usar un  valor que distingue entre solo dos posibilidades, como "si" o "no" o "encendido" o "apagado". Para este propósito, JavaScript tiene el tipo *boolean*, que tiene sólamente dos valores `true` y `false`
+
+```
+console.log(3 > 2)
+// -> true
+console.log(2 > 3)
+// -> false
+```
+
+Los strings pueden ser comparados de la misma forma.
+
+```
+console.log("Aardvark" < "Zoroaster")
+// -> true
+```
+
+La forma en que los string son ordenados es apenas alfabética, pero no realmente como tú esperas verlo en un diccionario: Las mayúsculas son siempre "menores" que las minúsculas, entonces "Z" < "a", y los caracteres no alfabéticos (!, -, y demás) son incluidos en el orden. Cuando se comparan strings, JavaScript va sobre los caracteres de izquierda a derecha, comparando los códigos Unicode uno por uno.
+
+Otros operadores similares son >= (Mayor o igual qué), <= (Menor o igual que), == (Igual a) y != (no igual a)
+
+```
+console.log("Itchy" != "Scratchy")
+// -> true
+console.log("Apple" == "Orange")
+// -> false
+console.log(NaN == NaN)
+// -> false
+```
+
+NaN es supuestamente para denotar el resultado de un cálculo sin sentido y como tal, no es igual al resultado de otro cálculo sin sentido.
+
+### Operadores Lógicos
+También hay operadores que pueden ser aplicados a los valores booleanos en si mismos. JavaScript soporta tres operadores lógicos, *and*, *or* y *not*. Estos pueden ser usados para "razonar" sobre Booleanos
+
+`&&` representa `and` 
+
+```
+console.log(true && false)
+// -> false
+console.log(true && true)
+// -> true
+```
+
+`||` representa `or`
+
+```
+console.log(false || true)
+// -> true
+console.log(false || false)
+// -> false
+```
+
+`!` representa `not`
+
+```
+console.log(!true)
+// -> false
+console.log(!false)
+// -> true
+```
+
+Cuando se mezclan estos operadores Boleanos con aritmética y otros operadores, no siempre es obvio que los paréntesis son necesarios.
+
+Orden de precedencia de operadores de mayor a menor
+
+```
+()
+/
+*
++
+-
+>, ==, !==
+&&
+||
+```
+
+En algunos casos los paréntesis pueden ser necesarios
+
+```
+1 + 1 == 2 && 10 * 10 > 50
+(1 + 1 == 2) && (10 * 10 > 50) 
+```
+
+Operador ternario
+
+Es el operador que opera con tres valores, es escrito con un signo de pregunta como primera opción y dos puntos como segunda opción
+
+`pregunta ? verdadero : falso`
+
+```
+console.log(true ? 1 : 2);
+// -> 1
+console.log(false ? 1 : 2);
+// -> 2
+```
+
+### Valores vacíos
+Hay dos valores especiales, escritos como `null` y `undefined`, que son usados para denotar la ausencia de un valor *con significado*, Ellos son valores en si mismos, pero no cargan información.
+
+La diferencia en el significado entre `undefined` y `null` es un accidente en el diseño de JavaScript, y no importa la mayoría del tiempo. En casos que deberías preocuparte por esos valores, Recomendaría tratarlos como intercambiables.
+
+### Conversión automática de tipos
+```
+console.log(8 * null)
+// -> 0
+
+console.log("5" - 1)
+// -> 4
+
+console.log("5" + 1)
+// -> 51
+
+console.log("five" * 2)
+// -> NaN
+
+console.log(false == 0)
+// -> true
+```
+
+Cuando un operador es aplicado con el tipo de valor "incorrecto", JavaScript silenciosamente intentará convertir el tipo de valor que sea necesario, usando un conjunto de reglas que usalmente no esperaríamos. Esto es llamado `coercion`
+
+### Corto circuito de operadores lógicos
+Los operadores lógicos && y || manejan diferentes tipos de valores de una manera peculiar. Ellos convierten el valor del lado izquierdo en un tipo Booleano en orden de decidir qué se hará, pero dependiendo del operador que resulte con esta conversión, el retornará  el valor de la mano izquierda o el valor de la mano derecha.
+
+```
+console.log(null || "user")
+// -> user
+
+console.log("Agnes" || "user")
+// -> Agnes
+```

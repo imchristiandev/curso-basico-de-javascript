@@ -770,3 +770,110 @@ Comentario multilínea: /\* \*/
 */
 const myNumber = 11213;
 ```
+
+### Ejercicios
+#### Armando un triángulo.
+Escribe un loop que realice siete llamadas a console.log para arrojar el triángulo siguiente:
+
+```
+#
+##
+###
+####
+#####
+######
+#######
+```
+
+Solución
+
+```
+for (let i=0; i < 7; i+=1) {
+	const hashes = "#######";
+	const triangleRow = hashes.substring(0, i+1)
+	console.log(triangleRow);
+}
+```
+
+#### FizzBuzz
+Escribe un programa que use `console.log`  para imprimir todos los números del 1 al 100, con dos excepciones. para los números divisibles por 3, imprime "Fizz" y para los números que son divisibles por 3 y "Buzz" para los números divisibles por 5.
+
+Cuando tu programa funcione, modifícalo para que imprima "FizzBuzz" para los números que sean divisibles por 3 y 5 (y continúa imprimiendo "Fizz" o "Buzz" para los números divisibles por uno solo de estos)
+
+Parte 1.
+
+```
+for (let i = 0; i < 100; i ++) {
+	const number = i+1;
+	if ( (number % 3) == 0 ) {
+		console.log("Fizz");
+	} else if ( (number % 5) == 0 ) {
+		console.log("Buzz");
+	} else {
+		console.log(number);
+	}
+}
+```
+
+Parte 2
+
+```
+for (let i = 0; i < 100; i ++) {
+	const number = i+1;
+	if ( (number % 3) == 0 ) {
+		if ( (number % 5) == 0 ) {
+			console.log("FizzBuzz");
+		} else {
+			console.log("Fizz");
+		}
+	} else if ( (number % 5) == 0 ) {
+		console.log("Buzz");
+	} else {
+		console.log(number);
+	}
+}
+```
+
+#### Tablero de ajedréz
+Escribe un programa que cree una cadena que represente una grilla de 8 x 8, usando una nueva línea, \n En cada posición de la grilla debe tener un caracter de espacio " " o un "#". los caracteres deberían formar un tablero de ajedréz.
+
+```
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # # 
+ # # # #
+# # # #
+```
+
+Solución:
+
+```
+let chessBoard = "";
+let gridQuantity = 8;
+
+for (let i = 0; i < gridQuantity; i ++) {
+	for (let j = 0 ; j < gridQuantity; j++) {
+		if ((i+1) % 2 == 0) {
+			if ((j+1) % 2) {
+				chessBoard += "#";
+			} else {
+				chessBoard += " ";
+			}
+		} else {
+			if ((j+1) % 2) {
+				chessBoard += " ";
+			} else {
+				chessBoard += "#";
+			}
+		}
+		if((j+1) % gridQuantity == 0) {
+			chessBoard += "\n";
+		}
+	}
+}
+
+console.log(chessBoard);
+```

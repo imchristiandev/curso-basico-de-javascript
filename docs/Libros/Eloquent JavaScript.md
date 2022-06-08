@@ -502,3 +502,143 @@ console.log(Math.min(2, 4) + 100);
 // -> 102
 ```
 
+### Flujos de control
+Cuando tu programa contiene más de un estado, los estados son ejecutados como si fueran una historia, de arriba hacia abajo.
+
+```
+let theNumber = Number(prompt("Pick a number"));
+console.log("your number is the square root of " + theNumber * theNumber);
+```
+
+La función `Number` convierte un valor en un número, existen funciones similares llamadas `String` y `Boolean` que convierten valores a esos tipos
+
+Representación semántica trivial de un flujo de control lineal:
+
+![](https://eloquentjavascript.net/img/controlflow-straight.svg)
+
+### Ejecución condicional
+No todos los programas son caminos derechos. Podríamos por ejemplo, querer crear un camino ramificado, donde el programa tome la rama adecuada basada en la situación que se tiene. Esto es llamado una *Ejecución condicional*.
+
+![](https://eloquentjavascript.net/img/controlflow-if.svg)
+
+Se crean con la palabra reservada `ìf` . Puede mantenerse en caso simple o compuesto con una opción que no cumple los estándares de este if.
+
+Ejemplo de if simple:
+
+```
+let theNumber = Number(prompt("Pick a number"));
+if (!Number.isNaN(theNumber)) {
+	console.log("Your number is the square root of " + theNumber * theNumber);
+}
+```
+
+Con esta modificación si agrego la palabra "loro", no se mostrará ningún output.
+
+La declaración después de `if` está envuelta en corchetes ({ and }) en este ejemplo. Los corchetes pueden ser usados para agrupar cualquier número de declaraciones en una declaración individual,  esta es una convención que se usará en la mayoría de los casos, excepto cuando se trate de declaraciones de una sola línea, que se harán de esta forma:
+
+```
+if(1 +1 == 2) console.log("It's true");
+// -> It's true
+```
+
+Ejemplo de if con alternativa, que se codifica con la palabra reservada `else`
+
+```
+let theNumber = Number(prompt("Pick a Number"));
+if (!Number.isNaN(theNumber)) {
+	console.log("Your number is the square root of " + theNumber * theNumber);
+} else {
+	console.log("Hey. Why didn't you give me a number?")
+}
+```
+
+Si tienes más de dos caminos para agregar, tú puedes "encadenar" múltiples if/else juntos.
+
+```
+let num = Number(prompt("Pick a number"))
+
+if (num < 10) {
+	console.log("Small");
+} else if (num < 100) {
+	console.log("Medium");
+} else {
+	console.log("Large");
+}
+```
+
+El esquema de este programa se ve algo así:
+
+![](https://eloquentjavascript.net/img/controlflow-nested-if.svg)
+
+### Ciclos While y Do
+Considera un programa que todos sus inputs vayan del 0 al 12, una forma de escribirlo es como se presenta a continuación:
+
+```
+console.log(0);
+console.log(2);
+console.log(4);
+console.log(6);
+console.log(8);
+console.log(10);
+console.log(12);
+```
+
+Esto "funciona", pero la idea de escribir un programa es hacerlo con *menos* trabajo, no más. Si necesitamos ejecutar este algoritmo hasta el número 1000, **este enfoque sería imposible de trabajar**. Es por eso que debemos correr un fragmento de código múltiples veces. Esta forma de control es llamada un loop.
+
+![](https://eloquentjavascript.net/img/controlflow-loop.svg)
+
+Una mejor forma de escribirlo sería esta:
+
+```
+let number = 0;
+while (number <= 12) {
+	console.log(number);
+	number = number + 2
+}
+// -> 0
+// -> 2
+// ... etcetera
+```
+
+Una declaración que inicia con la palabra clave `while` crea un loop. La palabra `while` es seguida de una expresión en paréntesis y después una declaración, muy parecida al if. El loop seguirá entrando a la delcaración minetras la expresión produce un valor que retorne `true` cuando es convertido a Boolean
+
+Ahora podemos escribir un programa que calcule y muestre el valor de 2^10 (2 a la 10 potencia)
+
+```
+let result = 1;
+let counter = 0;
+while (counter < 10) {
+	result = result * 2;
+	counter = counter + 1;
+}
+console.log(result);
+// -> 1024
+```
+
+Un ciclo `do` es muy parecido a un ciclo `while`. Difieren solo en un punto: el ciclo `do` siempre ejecuta su cuerpo al menos una vez, e inicia testeando y si debe detenerse solo después de esa primera ejecución.
+
+```
+let yourName;
+do {
+	yourName = prompt("Who are you?");
+} while (!yourName);
+console.log(yourName);
+```
+
+Este programa te forzará a ingresar un numbre. Te lo preguntará una y otra vez hasta que tenga algo que no sea una cadena vacía. Alicando el operador `!` podrás convertir un valor a un tipo Boolean antes de negarlo, y todas las strings excepto `""` se convierten en `true`. Esto significa que el loop continuará ejecutándose hasta que se provea un nombre no vacío
+
+### Identando el código
+El rol de la identación (Tabular el código) es crear una estructura de código entendible. En el código donde nuevos bloques son abiertos dentro de otros bloques, puede ser difícil de ver dónde inicia un bloque y donde termina. Algunas personas usa cuatro espacios, otra usa el tabulador.
+
+```
+if (false != true) {
+	console.log("That makes sense.");
+	if (1 < 2) {
+		console.log("No surprise there.");
+	}
+}
+```
+
+La mayoría de editores de código te ayudarán a identar automáticamente de forma correcta.
+
+### Ciclos for

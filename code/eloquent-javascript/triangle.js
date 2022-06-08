@@ -21,18 +21,10 @@ let gridQuantity = 8;
 
 for (let i = 0; i < gridQuantity; i ++) {
     for (let j = 0 ; j < gridQuantity; j++) {
-        if ((i+1) % 2 == 0) {
-            if ((j+1) % 2) {
-                chessBoard += "#";
-            } else {
-                chessBoard += " ";
-            }
+        if ((i+j) % 2 == 0) {
+            chessBoard += "#"
         } else {
-            if ((j+1) % 2) {
-                chessBoard += " ";
-            } else {
-                chessBoard += "#";
-            }
+            chessBoard += " "
         }
         
         if((j+1) % gridQuantity == 0) {

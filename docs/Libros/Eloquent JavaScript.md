@@ -642,3 +642,131 @@ if (false != true) {
 La mayoría de editores de código te ayudarán a identar automáticamente de forma correcta.
 
 ### Ciclos for
+Muchos ciclos siguien el patrón mostrado en los ejemplos de while. Primero un binding de "contador" es creado para seguir el progreso del ciclo. Entonces viene el ciclo `while` usualmente con la expresión de test que verá si el contador ha alcanzado su valor final, y al final del cuerpo del ciclo, el contador es actualizado para trackear el progreso.
+
+Porque este patrón es común, JavaScript y lenguajes similares provveen una forma más corta y progresiva, el ciclo `for`.
+
+```
+for (let number = 0; number <= 12; number = number + 2) {
+	console.log(number);
+}
+// -> 0
+// -> 2
+// ... etcetera
+```
+
+```
+let result = 1;
+for (let counter = 0; counter < 10; counter = counter +1) {
+	result = result * 2;
+}
+console.log(result)
+// -> 1024
+```
+
+### Rompiendo un ciclo
+Obtener una condición de ciclo que sea `false` no es la única forma de finalizar un ciclo. Existe una declaración especial llamada `break` que tiene el efecto inmediato de saltar fuera del ciclo interno.
+
+```
+for (let current = 20; current = current + 1) {
+	if (current % 7 == 0) {
+		console.log(current);
+		break;
+	}
+}
+```
+
+Este ciclo sería infinito de no ser por el condicional interno que inica que si el módulo del número actual dividido entre 7 es igual a 0 debería romperse, se debe tener cuidado con los ciclos infinitos.
+
+La palabra reservada `continue` es similar a `break`, Cuando la palabra continue es encontrada en el cuerpo de un ciclo, el control salta fuera del body y continúa con la siguiente iteración.
+
+### Actualizando bindings sucintamente (Por debajo)
+Especialmente cuando se hacen ciclos, un programa usualmente necesita "actualizar" un binding para mantener un valor basado en el valor anterior.
+
+```
+counter = counter + 1;
+```
+
+JavaScript provee un atajo para esto:
+
+```
+counter += 1;
+number *= 2;
+```
+
+Ejemplo práctico:
+
+```
+for (let number = 0; number <= 12; number += 2) {
+	console.log(number);
+}
+```
+
+### Despachando un valor con switch
+No es poco común en el código ver algo como esto:
+
+```
+if (x == "value1") action1();
+else if (x == "value2") action2();
+else if (x == "value3") action3();
+else defaultAction();
+```
+
+Existe un constructor llamado `switch` que intenta expresar un tipo de "despacho" de una manera más directa. Desafortunadamente, la sintaxis que usa JavaScript es un poco extraña.
+
+```
+switch(prompt("What is the wheater like?")) {
+	case "rainy":
+		console.log("Remember to bring an umbrella.");
+		break;
+	case "sunny":
+		console.log("Dress lightly.");
+		break;
+	case "cloudy":
+		console.log("Go outside.");
+		break;
+	default:
+		console.log("Unknown weather type!");
+		break;
+}
+```
+
+### Capitalización
+Los nombres de bindings no contienen espacios, sin embargo es util usar varias palabras para describir claramente que representa el binding. Estas son formas elegantes que puedes escoger para escribir un binding con varias palabras en él
+
+```
+fuzzylittleturtle x
+fuzzy_little_turtle
+FuzzyLittleTurtle
+fuzzyLittleTurtle
+```
+
+Cuando la primera letra del binding es mayúscula, se usa para marcar que la función es un constructor.
+
+### Comentarios
+Un comentario es una pieza de texto que es parte de un programa, pero es completamente ignorada por la computadora.
+
+Comentario de una línea: //
+
+```
+let accountBalance = calculateBalance(account);
+// It's a green hollow where a river sings
+accountBalance.adjust();
+// Madly catching white tatters in the grass.
+let report = new Report();
+// Where the sun on the proud mountain rings:
+addToReport(accountBalance, report);
+// It's a little valley, foaming like light in a glass.
+```
+
+Comentario multilínea: /\* \*/
+
+```
+/*
+  I first found this number scrawled on the back of an old
+  notebook. Since then, it has often dropped by, showing up in
+  phone numbers and the serial numbers of products that I've
+  bought. It obviously likes me, so I've decided to keep it.
+*/
+const myNumber = 11213;
+```

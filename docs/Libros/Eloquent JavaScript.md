@@ -315,7 +315,7 @@ Orden de precedencia de operadores de mayor a menor
 *
 +
 -
->, ==, !==
+>, <, >=, <=, ==, !=
 &&
 ||
 ```
@@ -375,3 +375,130 @@ console.log(null || "user")
 console.log("Agnes" || "user")
 // -> Agnes
 ```
+
+
+## Estructura del programa
+En este capítulo, empezaremos a hacer cosas que actualmente son llamadas *programación*. Expandiremos nuestros comandos en el lenguaje JavaScript más allá de sustantivos y fragmentos de oraciones que hemos visto hasta ahora, hasta el punto que podamos expresar una prosa significativa.
+
+### Expresiones y declaraciones
+La creación de valores es la sustancia principal de cualquier programa en JavaScript, Peroesta sustancia debe ser colocada en una estructura más larga para ser usable.
+
+Un fragmento de código que produce un valor es llamado ***Expresión***. Cada valor que es escrito literalmente (como 22 o "psicoanalisis") es una expresión. Una expresión dentro de paréntesis es también una expresión, como lo es un operador binario aplicado a dos espresiones o un operador unario aplicado a una.
+
+Esto muestra parte de la belleza de la interfaz basada en un lenguaje. Las expresiones pueden contener otras expresiones al igual que los lenguajes humanos.
+
+El tipo más simple de estado es una expresión con un punto y coma después de el, esto es un programa
+
+```
+1;
+!false;
+```
+
+### Bindings 
+¿Cómo hacemos para que un programa permanezca en un estado interno? ¿Cómo hacemos para que él recuerde cosas?
+
+Para atrapar y guardar valores, JavaScript produce algo llamado un ***binding*** o ***variable*** 
+
+```
+let caught = 5 * 5;
+```
+
+Este es un tipo de declaración. La palabra reservada `let` indica que esta sentencia va a ser definida como un binding. Es seguida por el nombre del binding, y si queremos podemos darle un valor con un = operador y una expresión.
+
+Para reasignar un valor se deberá poner la palabra reservada para la variable y un signo =
+
+```
+let theme = "dark";
+console.log(theme);
+// -> dark
+
+theme = "light";
+console.log(theme);
+// -> light
+```
+
+Otro ejemplo
+
+```
+let christiansDebt = 140;
+christiansDebt = christiansDebt - 35;
+console.log(christiansDebt);
+// -> 105
+```
+
+#### var, const y let
+Una sola declaración `let` puede definir múltiples bindings. Las definiciones deberán ser separadas por comas.
+
+```
+let one = 1, two = 2;
+console.log(one + two);
+// -> 3
+```
+
+Las palabras `var` y `const` pueden ser usadas para crear bindings, de una forma similar a `let`
+
+```
+var name = "Christian";
+const greeting = "Hello ";
+console.log(greeting + name);
+// -> Hello Ayda
+```
+
+`var`  era la forma en que los binding eran declarados en el JavaScript pre-2015
+`const` es la forma de definir un binding constante, que apunta al mismo valor mientras vive.
+`let` es la forma en que los binding que sufrirán variaciones deben ser declarados en JavaScript post-2015 
+
+### Nombres de Binding
+Pueden ser cualquier palabra. Los dígitos pueden ser parte de los nombres del binding, `catch22` es un nombre válido, pero el nombre no puede empezar con un dígito, el nombre puede incluir `$` y `_` pero ningún otra puntuación o caracteres especiales.
+
+Las keywords de JavaScript no pueden ser usada compo nombres de binding, ya que son "reservadas para uso" en versiones futoras de JavaScript
+
+```
+break case catch class const continue debugger default delete do else enum export extends false finally for function if implements import interface in instanceof let
+new package private protected public return static super switch this throw true try typeof var void while with yield
+```
+
+### El entorno
+La colección de bindings y sus valores que existen en un tiempo dado es llamado el *entorno*. 
+
+Cuando el programa inicia, este entorno no está vacío, Siempre contiene bindings que son parte de los estándares del lenguaje, y en la mayoría del tiempo, esto también tiene bindings que provee formas de interactuar con el sistema circundante.
+
+Por ejemplo en un navegador, hay funciones para interactuar con el sitio web cargado actuamente y lee inputs de mouse y teclado.
+
+### Functions
+Una *función* es un trozo de programa envuelta en un valor. Por ejemplo, en el entorno de un navegador, el binding `prompt`  es una función que muestra una pequeña caja de diálogo que pregunta por el input de un usuario.
+
+```
+prompt("Enter passcode");
+```
+
+![](https://eloquentjavascript.net/img/prompt.png)
+
+La ejecución de una función es llamada *invocación, llamado o aplicación (invoking, calling, applying)*. Puedes llamar una función colocando un paréntesis después de la expresión que produce un valor de una función.
+
+### La función console.log
+Escribe los argumentos en algún dispositivo de salida. En los navegadores se muestra en la consola de los mismos
+
+Ejemplo: 
+
+```
+let x = 30;
+console.log("the value of x is", x);
+// -> the value of x is 30
+```
+
+### Valores de retorno
+Mostrar una caja de diálogo o escribir texto en la pantalla es un *efecto secundario*. Varias funciones son útiles por los efectos secundarios que producen. Las funciones también pueden producir valores, en estos casos elas no necesitan tener un efecto secundario para ser útiles. Por ejemplo la función `Math.max` toma unna cantidad de argumentos numéricos y devuelve el más grande
+
+```
+console.log(Math.max(2, 4));
+// -> 4
+```
+
+Cuando la función produce un valor, es dicho que ella *retorna* ese valor, estas funciones pueden ser usadas como expresiones más largas, aquí hay un ejemplo donde `Math.min` es usada como parte de una expresión de suma.
+
+```
+console.log(Math.min(2, 4) + 100);
+// -> 102
+```
+

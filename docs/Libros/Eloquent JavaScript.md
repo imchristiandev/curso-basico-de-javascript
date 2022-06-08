@@ -835,7 +835,9 @@ for (let i = 0; i < 100; i ++) {
 ```
 
 #### Tablero de ajedréz
-Escribe un programa que cree una cadena que represente una grilla de 8 x 8, usando una nueva línea, \n En cada posición de la grilla debe tener un caracter de espacio " " o un "#". los caracteres deberían formar un tablero de ajedréz.
+Escribe un programa que cree una cadena que represente una grilla de 8 x 8, usando una nueva línea, \\n En cada posición de la grilla debe tener un caracter de espacio " " o un "#". los caracteres deberían formar un tablero de ajedréz.
+
+Se debe mostrar en un solo `console.log`.
 
 ```
  # # # #
@@ -856,18 +858,10 @@ let gridQuantity = 8;
 
 for (let i = 0; i < gridQuantity; i ++) {
 	for (let j = 0 ; j < gridQuantity; j++) {
-		if ((i+1) % 2 == 0) {
-			if ((j+1) % 2) {
-				chessBoard += "#";
-			} else {
-				chessBoard += " ";
-			}
+		if ((i+j) % 2 == 0) {
+			chessBoard += "#"
 		} else {
-			if ((j+1) % 2) {
-				chessBoard += " ";
-			} else {
-				chessBoard += "#";
-			}
+			chessBoard += " "
 		}
 		if((j+1) % gridQuantity == 0) {
 			chessBoard += "\n";

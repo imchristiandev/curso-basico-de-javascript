@@ -871,3 +871,111 @@ for (let i = 0; i < gridQuantity; i ++) {
 
 console.log(chessBoard);
 ```
+
+## Funciones
+Las funciones son el pan y la mantequilla de la programación en JavaScript. El concepto de envolver una pieza de programa en un valor tiene muchos usos. Esto nos da una forma de estructurar programas más largos, reducir la repetición, de asociar nombres con subprogramas, y separar estos subprogramas de otros.
+
+La aplicación más obvia de las funciones es definir nuevo vocabulario. Creando nuevas palabras en prosa es usualmente incorrecto. Pero en la programación, es indispensable.
+
+### Definiendo una función
+La definición de una función es un binding cuyo valor es la función en si. Por ejemplo:
+
+```
+const square = function(x) {
+	return x * x;
+}
+
+console.log(square(12));
+// -> 144
+```
+
+Una función es creada con una expresión que inicia con la palabra clave `function`. Las ufnciones tienen un set de parámetros (en este caso, solo `x`) y un cuero, que contiene las declaraciones a ser ejecutadas cuando la función sea llamada. El cuerpo de la función de una función creada de esta forma, siempre estará envuelta en braces ({ }), incluso si esto consiste en una sola declaración.
+
+```
+const makeNoise = function() {
+	console.log("Ping!");
+};
+
+makeNoise();
+// -> Ping!
+
+const power = function(base, exponent) {
+	let result = 1;
+	for(let count = 0; count < exponent; count++) {
+		result *= base;
+	}
+	return result
+}
+
+console.log(power(2, 10));
+// -> 1024
+```
+
+Algunas funciones producen un valor, como `power` y `square`, y otras no, como `makeNoise`  whose only result is a side effect. Un a declaración a la palabra reservada `return` determina que el valor en la función regresa.
+
+Un `return` sin una expresión después de él causa que la función regrese un valor `undefined`
+
+Los parámetros de una función se comportarán igual que los binding regulares, pero sus valores iniciales son dados por el *llamado de la función*, no en el código de la función por si misma.
+
+### Bindings y Scopes
+Cada binding tiene un `scope`, donde es parte del programa en el cual el binding es visible.
+
+Para los bindings definidos fuera de cualquier función o bloque, el scope es todo el programa, puedes referirte a dichos enlaces donde quieras, esto es llamado ***global bindings***.
+
+Pero los bindings creados por los parámetros de una función o declarados dentro de una función, sólamente podrán ser referenciados dentro de esa función. estos son conocidos como ***local bindings***.
+
+Esto provee algo de aislamiento entre funciones, cada llamado de función actua en su pequeño mundo propio (su entorno local), y pueden usualmente ser entendidos sin conocer en profundidad sobre qué está pasando en el entorno global.
+
+Los bindings declarados con `let` y `const` son en efecto locales en el `block` en el que hayan sido declarados.
+
+```
+let x = 10;
+if (true) {
+	let y = 20;
+	var z = 30;
+	console.log(x + y + z);
+	// -> 60
+}
+
+// y no es visible aquí
+console.log(x + z);
+// -> 40
+```
+
+Cada scope puede "mirar" hacia los ámbitos uqe lo rodean, por lo que x es visible dentro del bloqueen el ejemplo. La excepción es cuando múltiples bindings tienen el mismo nombre, en este caso, el código sólamente puede ver el más interno.
+
+```
+const halve = function(n) {
+	return n / 2;
+};
+
+let n = 10;
+console.log(halve(100));
+// -> 50
+console.log(n)
+// -> 10
+```
+
+### Nested Scope
+JavaScript no distingue solamente bindings *globales* y *locales*, Los bloques y funciones pueden ser creados dentro de otros bloques y funciones, produciendo múltiples grados de localidad.
+
+```
+const hummus = function(factor) {
+	const ingredient = function(amount, unit, name) {
+		let ingredientAmount = amount * factor;
+		if (ingredientAmount > 1) {
+			unit += "s";
+		}
+		console.log(`${ingredientAmount} ${unit} ${name}`);
+	}
+	ingredient(1, "can", "chickpeas");
+	ingredient(0.25, "cup", "tahini");
+	ingredient(0.25, "cup", "lemon juice");
+	ingredient(1, "clove", "garlic");
+	ingredient(2, "tablespoon", "olive oil");
+	ingredient(0.5, "teaspoon", "cumin");
+};
+```
+
+### Funciones como valores
+Un binding de función

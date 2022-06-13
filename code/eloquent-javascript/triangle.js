@@ -17,7 +17,7 @@ for (let i = 0; i < 100; i ++) {
 }
 
 let chessBoard = "";
-let gridQuantity = 8;
+let gridQuantity = 16;
 
 for (let i = 0; i < gridQuantity; i ++) {
     for (let j = 0 ; j < gridQuantity; j++) {

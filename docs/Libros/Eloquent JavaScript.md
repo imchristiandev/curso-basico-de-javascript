@@ -978,4 +978,44 @@ const hummus = function(factor) {
 ```
 
 ### Funciones como valores
-Un binding de función
+Un binding de función usualmente actua como un nombre para una pieza específica de programa. Dicho binding se define una vez y nunca se modifica. Esto hace fácil confundir la función y su nombre.
+
+Pero los dos son diferentes. El valor de la función puede hacer lo que otros valores hacen, puedes usar expresiones arbitrarias,no sencillamente llamar. Es posible guardar un valor de función dentro de un nuevo binding, pasar un argumento a una función y así.
+
+```
+let launchMissiles = function() {
+	missileSystem.launch("now");
+};
+if (safeMode) {
+	launchMissiles = function() {/* do nothing */}
+}
+```
+
+### Notación declarativa
+Existe una forma más corta de crear un binding de función. Cuando la palabra reservada `function` es usada para iniciar una declaración, trabaja diferente 
+
+```
+function square(x) {
+	return x * x;
+}
+```
+
+Esta es la *declaración de una función*. La declaración define el binding `square` y apunta a la función dada. Es levemente más sencillo de escribir y no requiere un punto y c oma después de la función.
+
+Hay una sutileza con esta forma de definición de función.
+
+```
+console.log("The future says", future());
+
+function future() {
+	return "You'll never have flying cars";
+}
+```
+
+El código anterior funciona, aunque la función se define a continuación *debajo* del código que la utiliza.
+
+Las declaraciones de función no son partye del flujo regular de arriba a abajo, ***Ellas son conceputalmente movidas a la parte de arriba de su scope y pueden ser usadas en todo el código de ese scope***.
+
+Esto algunas veces es útil porque ofrece la libertad de organizar código que es significativa, sin preocuparse sobre tener o definir todas las funciones antes de que sean usadas.
+
+### Arrow functions

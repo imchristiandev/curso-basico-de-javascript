@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "docs/Libros/Eloquent JavaScript.md",
+            "file": "docs/Libros/Eloquent JavaScript/0. Introducción.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Libros/Eloquent JavaScript.md",
+                "file": "docs/Libros/Eloquent JavaScript/0. Introducción.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,14 +89,15 @@
   },
   "active": "cb3949179f05cb84",
   "lastOpenFiles": [
-    "docs/Libros/Eloquent JavaScript.md",
+    "docs/Libros/Eloquent JavaScript/0. Introducción.md",
+    "docs/Libros/Eloquent JavaScript/1. Valores tipos y operadores.md",
+    "docs/Libros/Eloquent JavaScript/2. Estructura de programa.md",
+    "docs/Libros/Eloquent JavaScript/3. Funciones.md",
     "docs/3. Elementos de un lenguaje de programación - Variables Funciones y Sintáxis.md",
     "README.md",
     "docs/4. Variables en JavaScript.md",
     "docs/1. ¿Qué es JavaScript?.md",
     "docs/2. ¿Por qué JavaScript?.md",
-    "assets/tipos-de-datos.png",
-    "assets/lenguaje-interpretado.png",
-    "assets/compilación.png"
+    "assets/tipos-de-datos.png"
   ]
 }

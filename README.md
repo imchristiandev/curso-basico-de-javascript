@@ -5,6 +5,6 @@
 [[4. Variables en JavaScript]]
 
 ## Libros y resúmenes
-[[Eloquent JavaScript]]
+[[0. Introducción]]
 
 Para poder ver esta guía sin problemas, descargar obsidian https://obsidian.md/

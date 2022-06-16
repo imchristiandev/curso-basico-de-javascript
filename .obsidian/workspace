@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "docs/Libros/Eloquent JavaScript/0. Introducción.md",
+            "file": "docs/Libros/Eloquent JavaScript/3. Funciones.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Libros/Eloquent JavaScript/0. Introducción.md",
+                "file": "docs/Libros/Eloquent JavaScript/3. Funciones.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,10 +89,10 @@
   },
   "active": "cb3949179f05cb84",
   "lastOpenFiles": [
+    "docs/Libros/Eloquent JavaScript/3. Funciones.md",
     "docs/Libros/Eloquent JavaScript/0. Introducción.md",
     "docs/Libros/Eloquent JavaScript/1. Valores tipos y operadores.md",
     "docs/Libros/Eloquent JavaScript/2. Estructura de programa.md",
-    "docs/Libros/Eloquent JavaScript/3. Funciones.md",
     "docs/3. Elementos de un lenguaje de programación - Variables Funciones y Sintáxis.md",
     "README.md",
     "docs/4. Variables en JavaScript.md",

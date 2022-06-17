@@ -9,7 +9,7 @@
         "state": {
           "type": "markdown",
           "state": {
-            "file": "docs/Libros/Eloquent JavaScript/3. Funciones.md",
+            "file": "docs/Libros/Eloquent JavaScript/4. Estructuras de datos.md",
             "mode": "source",
             "source": false
           }
@@ -69,7 +69,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "docs/Libros/Eloquent JavaScript/3. Funciones.md",
+                "file": "docs/Libros/Eloquent JavaScript/4. Estructuras de datos.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -89,6 +89,7 @@
   },
   "active": "cb3949179f05cb84",
   "lastOpenFiles": [
+    "docs/Libros/Eloquent JavaScript/4. Estructuras de datos.md",
     "docs/Libros/Eloquent JavaScript/3. Funciones.md",
     "docs/Libros/Eloquent JavaScript/0. Introducción.md",
     "docs/Libros/Eloquent JavaScript/1. Valores tipos y operadores.md",
@@ -97,7 +98,6 @@
     "README.md",
     "docs/4. Variables en JavaScript.md",
     "docs/1. ¿Qué es JavaScript?.md",
-    "docs/2. ¿Por qué JavaScript?.md",
-    "assets/tipos-de-datos.png"
+    "docs/2. ¿Por qué JavaScript?.md"
   ]
 }

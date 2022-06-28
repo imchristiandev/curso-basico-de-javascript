@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "cb3949179f05cb84",
+        "id": "252e5d5a6bbd3598",
         "type": "leaf",
         "state": {
           "type": "markdown",
@@ -87,17 +87,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "cb3949179f05cb84",
+  "active": "252e5d5a6bbd3598",
   "lastOpenFiles": [
     "docs/Libros/Eloquent JavaScript/4. Estructuras de datos.md",
+    "assets/tipos-de-datos.png",
     "docs/Libros/Eloquent JavaScript/3. Funciones.md",
-    "docs/Libros/Eloquent JavaScript/0. Introducción.md",
-    "docs/Libros/Eloquent JavaScript/1. Valores tipos y operadores.md",
     "docs/Libros/Eloquent JavaScript/2. Estructura de programa.md",
+    "docs/Libros/Eloquent JavaScript/1. Valores tipos y operadores.md",
+    "docs/Libros/Eloquent JavaScript/0. Introducción.md",
     "docs/3. Elementos de un lenguaje de programación - Variables Funciones y Sintáxis.md",
     "README.md",
     "docs/4. Variables en JavaScript.md",
-    "docs/1. ¿Qué es JavaScript?.md",
-    "docs/2. ¿Por qué JavaScript?.md"
+    "docs/1. ¿Qué es JavaScript?.md"
   ]
 }
